@@ -1,10 +1,10 @@
 {
   "mappings": [
-    "/content/testcopa/:/",
-    "/content/testcopa/configuration:/.helix/config.json",
-    "/content/testcopa/metadata:/metadata.json"
+    "/content/<sitename>/:/",
+    "/content/<sitename>/configuration:/.helix/config.json",
+    "/content/<sitename>/metadata:/metadata.json"
   ],
   "includes": [
-    "/content/testcopa/"
+    "/content/<sitename>/"
   ]
 }

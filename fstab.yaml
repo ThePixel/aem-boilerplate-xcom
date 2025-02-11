@@ -1,5 +1,5 @@
 mountpoints:
   /:
-    url: "https://author-p137825-e1511252.adobeaemcloud.com/bin/franklin.delivery/aem-showcase/frescopa/main"
+    url: "https://author-p<programId>-e<envId>.adobeaemcloud.com/bin/franklin.delivery/<githubOrg>/<repo>/main"
     type: "markup"
     suffix: ".html"
