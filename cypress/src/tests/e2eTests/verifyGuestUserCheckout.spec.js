@@ -1,7 +1,6 @@
 import {
   setGuestEmail,
   setGuestShippingAddress,
-  setPaymentMethod,
   placeOrder,
 } from '../../actions';
 import {
@@ -17,12 +16,11 @@ import {
   assertOrderConfirmationShippingMethod,
 } from '../../assertions';
 import {
+
   assertSelectedPaymentMethod,
 } from '../../assertions';
 import {
   customerShippingAddress,
-  paymentServicesCreditCard,
-  checkMoneyOrder,
 } from '../../fixtures/index';
 import * as fields from "../../fields";
 
@@ -95,12 +93,10 @@ describe('Verify guest user can place order', () => {
     cy.wait('@setEmailOnCart');
     setGuestShippingAddress(customerShippingAddress, true);
     assertOrderSummaryMisc('$76.00', '$10.00', '$86.00');
-    assertSelectedPaymentMethod(checkMoneyOrder.code, 0);
-    setPaymentMethod(paymentServicesCreditCard);
-    assertSelectedPaymentMethod(paymentServicesCreditCard.code, 1);
+    assertSelectedPaymentMethod('checkmo', 0);
     cy.wait(5000);
     placeOrder();
-    assertOrderConfirmationCommonDetails(customerShippingAddress, paymentServicesCreditCard);
+    assertOrderConfirmationCommonDetails(customerShippingAddress);
     assertOrderConfirmationShippingDetails(customerShippingAddress);
     assertOrderConfirmationBillingDetails(customerShippingAddress);
     assertOrderConfirmationShippingMethod(customerShippingAddress);

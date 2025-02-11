@@ -1,0 +1,10 @@
+{
+  "mappings": [
+    "/content/testcopa/:/",
+    "/content/testcopa/configuration:/.helix/config.json",
+    "/content/testcopa/metadata:/metadata.json"
+  ],
+  "includes": [
+    "/content/testcopa/"
+  ]
+}

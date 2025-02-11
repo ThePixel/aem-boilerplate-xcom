@@ -1,5 +1,5 @@
 mountpoints:
-  /: https://adobe.sharepoint.com/:f:/r/sites/HelixProjects/Shared%20Documents/sites/starter-content-commerce
-
-folders:
-  /products/: /products/default
+  /:
+    url: "https://author-p137825-e1511252.adobeaemcloud.com/bin/franklin.delivery/aem-showcase/frescopa/main"
+    type: "markup"
+    suffix: ".html"

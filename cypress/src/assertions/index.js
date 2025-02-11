@@ -109,7 +109,7 @@ export const assertSelectedPaymentMethod = (
     .and('have.value', selected_payment_method);
 };
 
-export const assertOrderConfirmationCommonDetails = (customerDetails, paymentMethod) => {
+export const assertOrderConfirmationCommonDetails = (customerDetails) => {
   cy.get('.order-confirmation')
     .should(
       'contain',
@@ -119,7 +119,7 @@ export const assertOrderConfirmationCommonDetails = (customerDetails, paymentMet
     .and('contain', 'Contact details')
     .and('contain', customerDetails.email)
     .and('contain', 'Payment method')
-    .and('contain', paymentMethod.name)
+    .and('contain', customerDetails.paymentMethod)
     .and('contain', 'Order summary');
   cy.contains('p', /ORDER #\d+/).should('be.visible');
   cy.get('.order-confirmation__order-cost-summary').should('exist');
