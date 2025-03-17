@@ -6,6 +6,12 @@
     ]
   },
   {
+    "id": "columns-main",
+    "components": [
+      "columns-section"
+    ]
+  },
+  {
     "...": "./_section.json#/filters"
   },
   {

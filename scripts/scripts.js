@@ -150,6 +150,7 @@ function buildAutoBlocks(_main) {
  * @param {Element} main The container element
  */
 function buildTemplateColumns(doc) {
+  document.body.classList.add('columns');
   const columns = doc.querySelectorAll('main > div.section[data-column-width]');
 
   columns.forEach((column) => {
@@ -169,9 +170,12 @@ function buildTemplateColumns(doc) {
 }
 
 async function applyTemplates(doc) {
-  if (doc.body.classList.contains('columns')) {
-    buildTemplateColumns(doc);
-  }
+  const templates = ['account', 'orders', 'address', 'returns', 'account-order-details'];
+  templates.forEach((template) => {
+    if (doc.body.classList.contains(template)) {
+      buildTemplateColumns(doc);
+    }
+  });
 }
 
 /**
